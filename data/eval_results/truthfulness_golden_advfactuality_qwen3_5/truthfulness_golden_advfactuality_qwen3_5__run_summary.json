@@ -1,0 +1,465 @@
+{
+  "experiment_name": "truthfulness_golden_advfactuality_qwen3_5",
+  "model_name": "Qwen/Qwen3.5-35B-A3B",
+  "execution_parameters": {
+    "model_name": "Qwen/Qwen3.5-35B-A3B",
+    "generator_defaults": {
+      "max_new_tokens": 512,
+      "max_concurrency": 5
+    },
+    "task_setting": {
+      "name": "truthfulness_advfactuality",
+      "file": "data/datasets/trustllm/truthfulness/golden_advfactuality.json",
+      "temperature": 1.0
+    }
+  },
+  "metadata": {
+    "benchmark": "truthfulness_golden_advfactuality",
+    "dimension": "truthfulness",
+    "manipulations": [
+      "prompt templating"
+    ]
+  },
+  "generation_root": "data/task_results/truthfulness_golden_advfactuality_qwen3_5",
+  "manipulated_root": "data/manipulated_datasets",
+  "evaluation_root": "data/eval_results/truthfulness_golden_advfactuality_qwen3_5",
+  "task_name": "truthfulness_advfactuality",
+  "evaluation_results": [
+    {
+      "generation_file": "data/task_results/truthfulness_golden_advfactuality_qwen3_5/golden_advfactuality__AdvFactManipulator.json",
+      "evaluation_metadata": {},
+      "manipulation_summary": {
+        "total_examples": 1881,
+        "baseline_examples": 209,
+        "manipulated_examples": 1672,
+        "operations": {
+          "advfact-template-variation": {
+            "count": 1672,
+            "parameter_variants_number": {
+              "group": 3,
+              "level": 8,
+              "template_id": 8
+            },
+            "parameter_variant_values": {
+              "group": [
+                "epistemic_strength",
+                "epistemic_distance",
+                "prompt_order"
+              ],
+              "level": [
+                "experts",
+                "question_first",
+                "online_claim",
+                "weak_claim",
+                "strong_claim",
+                "likely_claim",
+                "some_people",
+                "knowledge_first"
+              ],
+              "template_id": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ]
+            }
+          }
+        }
+      },
+      "aggregated_results": {
+        "overall": {
+          "advfact_correctness": {
+            "average": 0.988835725677831,
+            "by_groups": null
+          }
+        },
+        "baseline": {
+          "advfact_correctness": {
+            "average": 0.9904306220095693,
+            "by_groups": null
+          }
+        },
+        "by_manipulation": {
+          "advfact-template-variation|group=epistemic_distance|level=experts|template_id=4": {
+            "advfact_correctness": {
+              "average": 0.9904306220095693,
+              "by_groups": null
+            }
+          },
+          "advfact-template-variation|group=epistemic_distance|level=online_claim|template_id=6": {
+            "advfact_correctness": {
+              "average": 0.9760765550239234,
+              "by_groups": null
+            }
+          },
+          "advfact-template-variation|group=epistemic_distance|level=some_people|template_id=5": {
+            "advfact_correctness": {
+              "average": 0.9856459330143541,
+              "by_groups": null
+            }
+          },
+          "advfact-template-variation|group=epistemic_strength|level=likely_claim|template_id=2": {
+            "advfact_correctness": {
+              "average": 1.0,
+              "by_groups": null
+            }
+          },
+          "advfact-template-variation|group=epistemic_strength|level=strong_claim|template_id=3": {
+            "advfact_correctness": {
+              "average": 1.0,
+              "by_groups": null
+            }
+          },
+          "advfact-template-variation|group=epistemic_strength|level=weak_claim|template_id=1": {
+            "advfact_correctness": {
+              "average": 0.9904306220095693,
+              "by_groups": null
+            }
+          },
+          "advfact-template-variation|group=prompt_order|level=knowledge_first|template_id=7": {
+            "advfact_correctness": {
+              "average": 0.9856459330143541,
+              "by_groups": null
+            }
+          },
+          "advfact-template-variation|group=prompt_order|level=question_first|template_id=8": {
+            "advfact_correctness": {
+              "average": 0.9808612440191388,
+              "by_groups": null
+            }
+          }
+        }
+      },
+      "signal_summary": {
+        "behavior": {
+          "response_length_words": {
+            "overall": {
+              "count": 1881,
+              "mean": 229.97713981924508,
+              "median": 210.0,
+              "minimum": 37,
+              "maximum": 409
+            },
+            "baseline": {
+              "count": 209,
+              "mean": 235.74641148325358,
+              "median": 222.0,
+              "minimum": 72,
+              "maximum": 401
+            },
+            "by_manipulation": {
+              "advfact-template-variation|group=epistemic_distance|level=experts|template_id=4": {
+                "count": 209,
+                "mean": 232.69856459330143,
+                "median": 202.0,
+                "minimum": 50,
+                "maximum": 399
+              },
+              "advfact-template-variation|group=epistemic_distance|level=online_claim|template_id=6": {
+                "count": 209,
+                "mean": 228.7224880382775,
+                "median": 206.0,
+                "minimum": 51,
+                "maximum": 409
+              },
+              "advfact-template-variation|group=epistemic_distance|level=some_people|template_id=5": {
+                "count": 209,
+                "mean": 241.77033492822966,
+                "median": 212.0,
+                "minimum": 71,
+                "maximum": 403
+              },
+              "advfact-template-variation|group=epistemic_strength|level=likely_claim|template_id=2": {
+                "count": 209,
+                "mean": 240.93301435406698,
+                "median": 225.0,
+                "minimum": 80,
+                "maximum": 402
+              },
+              "advfact-template-variation|group=epistemic_strength|level=strong_claim|template_id=3": {
+                "count": 209,
+                "mean": 239.65071770334927,
+                "median": 218.0,
+                "minimum": 77,
+                "maximum": 405
+              },
+              "advfact-template-variation|group=epistemic_strength|level=weak_claim|template_id=1": {
+                "count": 209,
+                "mean": 253.45933014354068,
+                "median": 259.0,
+                "minimum": 84,
+                "maximum": 398
+              },
+              "advfact-template-variation|group=prompt_order|level=knowledge_first|template_id=7": {
+                "count": 209,
+                "mean": 194.3397129186603,
+                "median": 157.0,
+                "minimum": 37,
+                "maximum": 401
+              },
+              "advfact-template-variation|group=prompt_order|level=question_first|template_id=8": {
+                "count": 209,
+                "mean": 202.47368421052633,
+                "median": 178.0,
+                "minimum": 42,
+                "maximum": 397
+              }
+            }
+          },
+          "response_length_chars": {
+            "overall": {
+              "count": 1881,
+              "mean": 1521.4933545986178,
+              "median": 1387.0,
+              "minimum": 250,
+              "maximum": 2803
+            },
+            "baseline": {
+              "count": 209,
+              "mean": 1551.4306220095693,
+              "median": 1476.0,
+              "minimum": 448,
+              "maximum": 2643
+            },
+            "by_manipulation": {
+              "advfact-template-variation|group=epistemic_distance|level=experts|template_id=4": {
+                "count": 209,
+                "mean": 1538.6937799043062,
+                "median": 1329.0,
+                "minimum": 315,
+                "maximum": 2747
+              },
+              "advfact-template-variation|group=epistemic_distance|level=online_claim|template_id=6": {
+                "count": 209,
+                "mean": 1508.9665071770335,
+                "median": 1297.0,
+                "minimum": 342,
+                "maximum": 2751
+              },
+              "advfact-template-variation|group=epistemic_distance|level=some_people|template_id=5": {
+                "count": 209,
+                "mean": 1595.688995215311,
+                "median": 1409.0,
+                "minimum": 442,
+                "maximum": 2685
+              },
+              "advfact-template-variation|group=epistemic_strength|level=likely_claim|template_id=2": {
+                "count": 209,
+                "mean": 1592.0334928229665,
+                "median": 1491.0,
+                "minimum": 502,
+                "maximum": 2708
+              },
+              "advfact-template-variation|group=epistemic_strength|level=strong_claim|template_id=3": {
+                "count": 209,
+                "mean": 1584.2583732057417,
+                "median": 1461.0,
+                "minimum": 449,
+                "maximum": 2778
+              },
+              "advfact-template-variation|group=epistemic_strength|level=weak_claim|template_id=1": {
+                "count": 209,
+                "mean": 1674.6459330143541,
+                "median": 1707.0,
+                "minimum": 519,
+                "maximum": 2777
+              },
+              "advfact-template-variation|group=prompt_order|level=knowledge_first|template_id=7": {
+                "count": 209,
+                "mean": 1298.6459330143541,
+                "median": 1046.0,
+                "minimum": 250,
+                "maximum": 2704
+              },
+              "advfact-template-variation|group=prompt_order|level=question_first|template_id=8": {
+                "count": 209,
+                "mean": 1349.0765550239234,
+                "median": 1170.0,
+                "minimum": 252,
+                "maximum": 2803
+              }
+            }
+          },
+          "response_length_deltas_vs_baseline": {
+            "advfact-template-variation|group=epistemic_distance|level=experts|template_id=4": {
+              "word_mean_shift": -3.0478468899521545,
+              "char_mean_shift": -12.736842105263122
+            },
+            "advfact-template-variation|group=epistemic_distance|level=online_claim|template_id=6": {
+              "word_mean_shift": -7.023923444976077,
+              "char_mean_shift": -42.46411483253587
+            },
+            "advfact-template-variation|group=epistemic_distance|level=some_people|template_id=5": {
+              "word_mean_shift": 6.023923444976077,
+              "char_mean_shift": 44.25837320574169
+            },
+            "advfact-template-variation|group=epistemic_strength|level=likely_claim|template_id=2": {
+              "word_mean_shift": 5.186602870813402,
+              "char_mean_shift": 40.6028708133972
+            },
+            "advfact-template-variation|group=epistemic_strength|level=strong_claim|template_id=3": {
+              "word_mean_shift": 3.904306220095691,
+              "char_mean_shift": 32.82775119617236
+            },
+            "advfact-template-variation|group=epistemic_strength|level=weak_claim|template_id=1": {
+              "word_mean_shift": 17.7129186602871,
+              "char_mean_shift": 123.21531100478478
+            },
+            "advfact-template-variation|group=prompt_order|level=knowledge_first|template_id=7": {
+              "word_mean_shift": -41.406698564593285,
+              "char_mean_shift": -252.78468899521522
+            },
+            "advfact-template-variation|group=prompt_order|level=question_first|template_id=8": {
+              "word_mean_shift": -33.27272727272725,
+              "char_mean_shift": -202.3540669856459
+            }
+          }
+        },
+        "pairwise_stability": {
+          "overall": {
+            "paired_examples": 1672,
+            "comparable_pairs": 1672,
+            "flips": 31,
+            "flip_rate": 0.01854066985645933,
+            "consistency_rate": 0.9814593301435407
+          },
+          "by_manipulation": {
+            "advfact-template-variation|group=epistemic_distance|level=experts|template_id=4": {
+              "paired_examples": 209,
+              "comparable_pairs": 209,
+              "flips": 4,
+              "flip_rate": 0.019138755980861243,
+              "consistency_rate": 0.9808612440191388
+            },
+            "advfact-template-variation|group=epistemic_distance|level=online_claim|template_id=6": {
+              "paired_examples": 209,
+              "comparable_pairs": 209,
+              "flips": 7,
+              "flip_rate": 0.03349282296650718,
+              "consistency_rate": 0.9665071770334929
+            },
+            "advfact-template-variation|group=epistemic_distance|level=some_people|template_id=5": {
+              "paired_examples": 209,
+              "comparable_pairs": 209,
+              "flips": 3,
+              "flip_rate": 0.014354066985645933,
+              "consistency_rate": 0.9856459330143541
+            },
+            "advfact-template-variation|group=epistemic_strength|level=likely_claim|template_id=2": {
+              "paired_examples": 209,
+              "comparable_pairs": 209,
+              "flips": 2,
+              "flip_rate": 0.009569377990430622,
+              "consistency_rate": 0.9904306220095693
+            },
+            "advfact-template-variation|group=epistemic_strength|level=strong_claim|template_id=3": {
+              "paired_examples": 209,
+              "comparable_pairs": 209,
+              "flips": 2,
+              "flip_rate": 0.009569377990430622,
+              "consistency_rate": 0.9904306220095693
+            },
+            "advfact-template-variation|group=epistemic_strength|level=weak_claim|template_id=1": {
+              "paired_examples": 209,
+              "comparable_pairs": 209,
+              "flips": 4,
+              "flip_rate": 0.019138755980861243,
+              "consistency_rate": 0.9808612440191388
+            },
+            "advfact-template-variation|group=prompt_order|level=knowledge_first|template_id=7": {
+              "paired_examples": 209,
+              "comparable_pairs": 209,
+              "flips": 5,
+              "flip_rate": 0.023923444976076555,
+              "consistency_rate": 0.9760765550239234
+            },
+            "advfact-template-variation|group=prompt_order|level=question_first|template_id=8": {
+              "paired_examples": 209,
+              "comparable_pairs": 209,
+              "flips": 4,
+              "flip_rate": 0.019138755980861243,
+              "consistency_rate": 0.9808612440191388
+            }
+          }
+        },
+        "sensitivity": {
+          "reference": "baseline",
+          "by_manipulation": {
+            "advfact-template-variation|group=epistemic_distance|level=experts|template_id=4": {
+              "advfact_correctness": 0.0
+            },
+            "advfact-template-variation|group=epistemic_distance|level=online_claim|template_id=6": {
+              "advfact_correctness": -0.014354066985645897
+            },
+            "advfact-template-variation|group=epistemic_distance|level=some_people|template_id=5": {
+              "advfact_correctness": -0.004784688995215225
+            },
+            "advfact-template-variation|group=epistemic_strength|level=likely_claim|template_id=2": {
+              "advfact_correctness": 0.009569377990430672
+            },
+            "advfact-template-variation|group=epistemic_strength|level=strong_claim|template_id=3": {
+              "advfact_correctness": 0.009569377990430672
+            },
+            "advfact-template-variation|group=epistemic_strength|level=weak_claim|template_id=1": {
+              "advfact_correctness": 0.0
+            },
+            "advfact-template-variation|group=prompt_order|level=knowledge_first|template_id=7": {
+              "advfact_correctness": -0.004784688995215225
+            },
+            "advfact-template-variation|group=prompt_order|level=question_first|template_id=8": {
+              "advfact_correctness": -0.009569377990430561
+            }
+          }
+        }
+      },
+      "diagnostic_summary": {
+        "thresholds": {
+          "metric_drop": -0.05,
+          "severe_metric_drop": -0.15,
+          "flip_rate": 0.2,
+          "severe_flip_rate": 0.4,
+          "word_mean_shift": 20.0,
+          "severe_word_mean_shift": 60.0
+        },
+        "diagnoses": [
+          {
+            "operation": "advfact-template-variation|group=prompt_order|level=knowledge_first|template_id=7",
+            "label": "Response compression under advfact template variation [group=prompt_order, level=knowledge_first, template_id=7]",
+            "severity": "medium",
+            "failure_mode": "Response compression",
+            "mechanism_hypothesis": "Manipulation may induce terse outputs that omit needed evidence.",
+            "evidence": {
+              "flip_rate": 0.023923444976076555,
+              "word_mean_shift": -41.406698564593285,
+              "manipulation_group": "prompt_order",
+              "manipulation_level": "knowledge_first",
+              "manipulation_template_id": 7,
+              "metric_name": "advfact_correctness",
+              "metric_delta": -0.004784688995215225
+            }
+          },
+          {
+            "operation": "advfact-template-variation|group=prompt_order|level=question_first|template_id=8",
+            "label": "Response compression under advfact template variation [group=prompt_order, level=question_first, template_id=8]",
+            "severity": "medium",
+            "failure_mode": "Response compression",
+            "mechanism_hypothesis": "Manipulation may induce terse outputs that omit needed evidence.",
+            "evidence": {
+              "flip_rate": 0.019138755980861243,
+              "word_mean_shift": -33.27272727272725,
+              "manipulation_group": "prompt_order",
+              "manipulation_level": "question_first",
+              "manipulation_template_id": 8,
+              "metric_name": "advfact_correctness",
+              "metric_delta": -0.009569377990430561
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

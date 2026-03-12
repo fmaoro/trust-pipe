@@ -1,0 +1,448 @@
+{
+  "experiment_name": "truthfulness_external_llama_3_2",
+  "model_name": "meta-llama/Llama-3.2-3B-Instruct",
+  "execution_parameters": {
+    "model_name": "meta-llama/Llama-3.2-3B-Instruct",
+    "generator_defaults": {
+      "batch_size": 60,
+      "temperature": 1.0,
+      "max_new_tokens": 512,
+      "repetition_penalty": 1.0
+    },
+    "task_setting": {
+      "name": "truthfulness_external",
+      "file": "data/datasets/trustllm/truthfulness/external.json",
+      "temperature": 0.0
+    }
+  },
+  "metadata": {
+    "benchmark": "truthfulness_external",
+    "dimension": "truthfulness",
+    "manipulation": "prompt templating"
+  },
+  "generation_root": "data/task_results/truthfulness_external_llama_3_2",
+  "manipulated_root": "data/manipulated_datasets",
+  "evaluation_root": "data/eval_results/truthfulness_external_llama_3_2",
+  "task_name": "truthfulness_external",
+  "evaluation_results": [
+    {
+      "generation_file": "data/task_results/truthfulness_external_llama_3_2/external__TruthfulnessExternalManipulator.json",
+      "evaluation_metadata": {},
+      "manipulation_summary": {
+        "total_examples": 2000,
+        "baseline_examples": 400,
+        "manipulated_examples": 1600,
+        "operations": {
+          "truthfulness-external-template-variation": {
+            "count": 1600,
+            "parameter_variants_number": {
+              "group": 2,
+              "level": 4,
+              "template_id": 4
+            },
+            "parameter_variant_values": {
+              "group": [
+                "layout",
+                "role"
+              ],
+              "level": [
+                "json",
+                "professional",
+                "neutral",
+                "markdown"
+              ],
+              "template_id": [
+                1,
+                2,
+                3,
+                4
+              ]
+            }
+          }
+        }
+      },
+      "aggregated_results": {
+        "overall": {
+          "scifact": {
+            "average": 0.6641550937325585,
+            "by_groups": null
+          },
+          "covid": {
+            "average": 0.7350214873484805,
+            "by_groups": null
+          },
+          "healthver": {
+            "average": 0.5540290480184246,
+            "by_groups": null
+          },
+          "climate": {
+            "average": 0.46052121949869973,
+            "by_groups": null
+          },
+          "avg": {
+            "average": 0.6034317121495408,
+            "by_groups": null
+          }
+        },
+        "baseline": {
+          "scifact": {
+            "average": 0.6624040920716112,
+            "by_groups": null
+          },
+          "covid": {
+            "average": 0.6923076923076923,
+            "by_groups": null
+          },
+          "healthver": {
+            "average": 0.5464100011063171,
+            "by_groups": null
+          },
+          "climate": {
+            "average": 0.5098039215686274,
+            "by_groups": null
+          },
+          "avg": {
+            "average": 0.602731426763562,
+            "by_groups": null
+          }
+        },
+        "by_manipulation": {
+          "truthfulness-external-template-variation|group=layout|level=json|template_id=4": {
+            "scifact": {
+              "average": 0.6565656565656566,
+              "by_groups": null
+            },
+            "covid": {
+              "average": 0.7668997668997668,
+              "by_groups": null
+            },
+            "healthver": {
+              "average": 0.525101763907734,
+              "by_groups": null
+            },
+            "climate": {
+              "average": 0.39290917921321034,
+              "by_groups": null
+            },
+            "avg": {
+              "average": 0.5853690916465919,
+              "by_groups": null
+            }
+          },
+          "truthfulness-external-template-variation|group=layout|level=markdown|template_id=3": {
+            "scifact": {
+              "average": 0.641192917054986,
+              "by_groups": null
+            },
+            "covid": {
+              "average": 0.751984126984127,
+              "by_groups": null
+            },
+            "healthver": {
+              "average": 0.568536342515765,
+              "by_groups": null
+            },
+            "climate": {
+              "average": 0.4350282485875706,
+              "by_groups": null
+            },
+            "avg": {
+              "average": 0.5991854087856121,
+              "by_groups": null
+            }
+          },
+          "truthfulness-external-template-variation|group=role|level=neutral|template_id=2": {
+            "scifact": {
+              "average": 0.6510673234811166,
+              "by_groups": null
+            },
+            "covid": {
+              "average": 0.7668997668997668,
+              "by_groups": null
+            },
+            "healthver": {
+              "average": 0.554367201426025,
+              "by_groups": null
+            },
+            "climate": {
+              "average": 0.47987336047037543,
+              "by_groups": null
+            },
+            "avg": {
+              "average": 0.6130519130693209,
+              "by_groups": null
+            }
+          },
+          "truthfulness-external-template-variation|group=role|level=professional|template_id=1": {
+            "scifact": {
+              "average": 0.7083333333333334,
+              "by_groups": null
+            },
+            "covid": {
+              "average": 0.69558599695586,
+              "by_groups": null
+            },
+            "healthver": {
+              "average": 0.5741893219783819,
+              "by_groups": null
+            },
+            "climate": {
+              "average": 0.4725620020199753,
+              "by_groups": null
+            },
+            "avg": {
+              "average": 0.6126676635718876,
+              "by_groups": null
+            }
+          }
+        }
+      },
+      "signal_summary": {
+        "behavior": {
+          "response_length_words": {
+            "overall": {
+              "count": 2000,
+              "mean": 8.699,
+              "median": 3.0,
+              "minimum": 2,
+              "maximum": 257
+            },
+            "baseline": {
+              "count": 400,
+              "mean": 2.9925,
+              "median": 3.0,
+              "minimum": 2,
+              "maximum": 3
+            },
+            "by_manipulation": {
+              "truthfulness-external-template-variation|group=layout|level=json|template_id=4": {
+                "count": 400,
+                "mean": 2.9075,
+                "median": 3.0,
+                "minimum": 2,
+                "maximum": 3
+              },
+              "truthfulness-external-template-variation|group=layout|level=markdown|template_id=3": {
+                "count": 400,
+                "mean": 31.8375,
+                "median": 29.0,
+                "minimum": 4,
+                "maximum": 257
+              },
+              "truthfulness-external-template-variation|group=role|level=neutral|template_id=2": {
+                "count": 400,
+                "mean": 2.9325,
+                "median": 3.0,
+                "minimum": 2,
+                "maximum": 3
+              },
+              "truthfulness-external-template-variation|group=role|level=professional|template_id=1": {
+                "count": 400,
+                "mean": 2.825,
+                "median": 3.0,
+                "minimum": 2,
+                "maximum": 3
+              }
+            }
+          },
+          "response_length_chars": {
+            "overall": {
+              "count": 2000,
+              "mean": 66.0015,
+              "median": 26.0,
+              "minimum": 15,
+              "maximum": 1885
+            },
+            "baseline": {
+              "count": 400,
+              "mean": 26.255,
+              "median": 26.0,
+              "minimum": 18,
+              "maximum": 28
+            },
+            "by_manipulation": {
+              "truthfulness-external-template-variation|group=layout|level=json|template_id=4": {
+                "count": 400,
+                "mean": 25.3475,
+                "median": 26.0,
+                "minimum": 15,
+                "maximum": 28
+              },
+              "truthfulness-external-template-variation|group=layout|level=markdown|template_id=3": {
+                "count": 400,
+                "mean": 227.7925,
+                "median": 205.0,
+                "minimum": 37,
+                "maximum": 1885
+              },
+              "truthfulness-external-template-variation|group=role|level=neutral|template_id=2": {
+                "count": 400,
+                "mean": 25.73,
+                "median": 26.0,
+                "minimum": 18,
+                "maximum": 27
+              },
+              "truthfulness-external-template-variation|group=role|level=professional|template_id=1": {
+                "count": 400,
+                "mean": 24.8825,
+                "median": 26.0,
+                "minimum": 18,
+                "maximum": 27
+              }
+            }
+          },
+          "response_length_deltas_vs_baseline": {
+            "truthfulness-external-template-variation|group=layout|level=json|template_id=4": {
+              "word_mean_shift": -0.08499999999999996,
+              "char_mean_shift": -0.9074999999999989
+            },
+            "truthfulness-external-template-variation|group=layout|level=markdown|template_id=3": {
+              "word_mean_shift": 28.845,
+              "char_mean_shift": 201.5375
+            },
+            "truthfulness-external-template-variation|group=role|level=neutral|template_id=2": {
+              "word_mean_shift": -0.06000000000000005,
+              "char_mean_shift": -0.5249999999999986
+            },
+            "truthfulness-external-template-variation|group=role|level=professional|template_id=1": {
+              "word_mean_shift": -0.16749999999999998,
+              "char_mean_shift": -1.3724999999999987
+            }
+          }
+        },
+        "pairwise_stability": {
+          "overall": {
+            "paired_examples": 1600,
+            "comparable_pairs": 1600,
+            "flips": 189,
+            "flip_rate": 0.118125,
+            "consistency_rate": 0.881875
+          },
+          "by_manipulation": {
+            "truthfulness-external-template-variation|group=layout|level=json|template_id=4": {
+              "paired_examples": 400,
+              "comparable_pairs": 400,
+              "flips": 45,
+              "flip_rate": 0.1125,
+              "consistency_rate": 0.8875
+            },
+            "truthfulness-external-template-variation|group=layout|level=markdown|template_id=3": {
+              "paired_examples": 400,
+              "comparable_pairs": 400,
+              "flips": 47,
+              "flip_rate": 0.1175,
+              "consistency_rate": 0.8825000000000001
+            },
+            "truthfulness-external-template-variation|group=role|level=neutral|template_id=2": {
+              "paired_examples": 400,
+              "comparable_pairs": 400,
+              "flips": 51,
+              "flip_rate": 0.1275,
+              "consistency_rate": 0.8725
+            },
+            "truthfulness-external-template-variation|group=role|level=professional|template_id=1": {
+              "paired_examples": 400,
+              "comparable_pairs": 400,
+              "flips": 46,
+              "flip_rate": 0.115,
+              "consistency_rate": 0.885
+            }
+          }
+        },
+        "sensitivity": {
+          "reference": "baseline",
+          "by_manipulation": {
+            "truthfulness-external-template-variation|group=layout|level=json|template_id=4": {
+              "avg": -0.01736233511697005,
+              "climate": -0.11689474235541708,
+              "covid": 0.07459207459207451,
+              "healthver": -0.021308237198583102,
+              "scifact": -0.005838435505954642
+            },
+            "truthfulness-external-template-variation|group=layout|level=markdown|template_id=3": {
+              "avg": -0.0035460179779498446,
+              "climate": -0.0747756729810568,
+              "covid": 0.059676434676434686,
+              "healthver": 0.022126341409447914,
+              "scifact": -0.021211175016625172
+            },
+            "truthfulness-external-template-variation|group=role|level=neutral|template_id=2": {
+              "avg": 0.010320486305758991,
+              "climate": -0.029930561098251984,
+              "covid": 0.07459207459207451,
+              "healthver": 0.007957200319707924,
+              "scifact": -0.011336768590494595
+            },
+            "truthfulness-external-template-variation|group=role|level=professional|template_id=1": {
+              "avg": 0.009936236808325671,
+              "climate": -0.037241919548652136,
+              "covid": 0.003278304648167696,
+              "healthver": 0.027779320872064805,
+              "scifact": 0.045929241261722153
+            }
+          }
+        }
+      },
+      "diagnostic_summary": {
+        "thresholds": {
+          "metric_drop": -0.05,
+          "severe_metric_drop": -0.15,
+          "flip_rate": 0.2,
+          "severe_flip_rate": 0.4,
+          "word_mean_shift": 20.0,
+          "severe_word_mean_shift": 60.0
+        },
+        "diagnoses": [
+          {
+            "operation": "truthfulness-external-template-variation|group=layout|level=json|template_id=4",
+            "label": "Systematic degradation under truthfulness external template variation [group=layout, level=json, template_id=4] (climate)",
+            "severity": "medium",
+            "failure_mode": "Score degradation without major label flipping",
+            "mechanism_hypothesis": "Manipulation likely shifts outputs away from evaluator criteria in a stable but lower-quality direction.",
+            "evidence": {
+              "flip_rate": 0.1125,
+              "word_mean_shift": -0.08499999999999996,
+              "manipulation_group": "layout",
+              "manipulation_level": "json",
+              "manipulation_template_id": 4,
+              "metric_name": "climate",
+              "metric_delta": -0.11689474235541708
+            }
+          },
+          {
+            "operation": "truthfulness-external-template-variation|group=layout|level=markdown|template_id=3",
+            "label": "Systematic degradation under truthfulness external template variation [group=layout, level=markdown, template_id=3] (climate)",
+            "severity": "medium",
+            "failure_mode": "Score degradation without major label flipping",
+            "mechanism_hypothesis": "Manipulation likely shifts outputs away from evaluator criteria in a stable but lower-quality direction.",
+            "evidence": {
+              "flip_rate": 0.1175,
+              "word_mean_shift": 28.845,
+              "manipulation_group": "layout",
+              "manipulation_level": "markdown",
+              "manipulation_template_id": 3,
+              "metric_name": "climate",
+              "metric_delta": -0.0747756729810568
+            }
+          },
+          {
+            "operation": "truthfulness-external-template-variation|group=layout|level=markdown|template_id=3",
+            "label": "Verbosity inflation under truthfulness external template variation [group=layout, level=markdown, template_id=3]",
+            "severity": "medium",
+            "failure_mode": "Verbosity inflation",
+            "mechanism_hypothesis": "Manipulation likely shifts style toward longer answers that can reduce precision.",
+            "evidence": {
+              "flip_rate": 0.1175,
+              "word_mean_shift": 28.845,
+              "manipulation_group": "layout",
+              "manipulation_level": "markdown",
+              "manipulation_template_id": 3,
+              "metric_name": "climate",
+              "metric_delta": -0.0747756729810568
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
